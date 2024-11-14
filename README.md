@@ -51,10 +51,13 @@ Answer the following questions using SparkSQL:
    - Calculate the average price of a home per "view" rating for homes with an average price greater than or equal to $350,000. **Determine the runtime for this query** and **round off your answer to two decimal places**.
 
 ### Caching and Performance Optimization
+1. **Cache the Temporary Table:** Cache your home_sales temporary table.
 
-1. **Cache the Temporary Table**: Cache your `home_sales` temporary table.
-2. **Check Caching**: Verify if the `home_sales` temporary table is cached.
-3. **Run Cached Query**: Using the cached data, re-run the query that calculates the average price of a home per "view" rating for properties with an average home price greater than or equal to $350,000. **Determine the runtime** and **compare it to the uncached runtime**.
+2. Caching temporarily stores data in memory, allowing Spark to access frequently queried data faster than if it had to reload it from disk each time. This technique reduces runtime for repeated queries, especially with large datasets, as it eliminates the need to retrieve data from storage. In this project, caching is used to improve query performance, providing a noticeable difference in runtime between cached and uncached data.
+
+3. **Check Caching:** Verify if the home_sales temporary table is cached.
+
+4. **Run Cached Query:** Using the cached data, re-run the query that calculates the average price of a home per "view" rating for properties with an average home price greater than or equal to $350,000. Determine the runtime and compare it to the uncached runtime.
 
 ### Partitioning Data and Additional Query
 
